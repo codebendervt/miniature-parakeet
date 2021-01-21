@@ -1,4 +1,5 @@
-const octokit = new Octokit({ auth: `ff6368ec0bdf97d29cbc18a8b0d6ef4ded26a140` });
+const { Octokit } = require("@octokit/core");
+const octokit = new Octokit({ auth: process.env.GITHUB_KEY });
 
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
