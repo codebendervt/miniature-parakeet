@@ -1,5 +1,5 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import {create, read,update, remove } from '../init'
+import {create, read,update, remove, getAll } from '../init'
 
 
 
@@ -8,7 +8,6 @@ import {create, read,update, remove } from '../init'
 export default async (req, res, isHandler=true) => {
 
     let response = { status: "error" }
-
     try {
 
         switch (req.method) {
@@ -25,7 +24,7 @@ export default async (req, res, isHandler=true) => {
                 response = await remove(req.body.id,"genus")
                 break;
             default:
-                response = { status: "not a proper request" }
+                response = await getAll()
         }
 
 

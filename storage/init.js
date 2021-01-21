@@ -46,9 +46,22 @@ const findById = async (id, index ="identity") =>{
       )
 }
 
+const getAll = async (index = "genus") => {
+
+    let result = await faunaSDK.query(
+        q.Paginate(q.Documents(q.Collection(index))),
+        )
+
+    let exp = result.data.map((i) => q.Get(i))
+    let data = await faunaSDK.query(exp)
+
+
+    return data;
+}
+
   
 const faunaSDK = new faunadb.Client({ secret: process.env.FAUNA_SECRET })
 
 const q = query;
 
-export {create, update, read, remove,findById}
+export {create, update, read, remove,findById, getAll}
