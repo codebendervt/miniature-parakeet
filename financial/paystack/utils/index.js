@@ -1,4 +1,4 @@
-import Product from './product'
+import {CreateProduct, GetProduct} from './product'
 
 
-export {Product}
+export {CreateProduct, GetProduct}
