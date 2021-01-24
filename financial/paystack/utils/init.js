@@ -3,7 +3,7 @@ import transact from 'sauveur_core/fetch/fetch.js'
 
 const endpoint = "https://api.paystack.co/"
 
-let key = process.env.PAYSTACK_SECRET || "pk_test_8dc7324a031b0de76d7ae9f359fb1ae91fac3712";
+let key = process.env.PAYSTACK_SECRET || process.env.PAYSTACK_SECRET_PREVIEW;
 
 const payStackAPi =  async (method, type, data = null) => {
 
