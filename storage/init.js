@@ -34,6 +34,7 @@ const update = async (data, id,col="theplug") => {
 
 const remove = async (id,col="theplug") => {
 
+    console.log("removing the data",id)
     return await faunaSDK.query(
         q.Delete(q.Ref(q.Collection(col), id))
       )

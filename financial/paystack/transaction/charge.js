@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import paystackSDK from '../init'
-import endpoints from './endpoints'
+import paystackSDK from '../utils/init'
+import endpoints from '../utils/endpoints'
 
 export default async (req, res) => {
 

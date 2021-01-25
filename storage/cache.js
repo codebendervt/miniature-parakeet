@@ -5,7 +5,8 @@ var bluebird = require("bluebird");
 // Convert Redis client API to use promises, to make it usable with async/await syntax
 bluebird.promisifyAll(redis.RedisClient.prototype);
 bluebird.promisifyAll(redis.Multi.prototype);
-
+var cacheConnection = redis.createClient(6379, "sauveur.redis.cache.windows.net",
+{ auth_pass: "jbH2qRtJd8TqVQzHfQRfkFqsZ07U0e2jtKW4bDCLX3k=" });
 
 
 const getCache = async (name) => {

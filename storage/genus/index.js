@@ -8,7 +8,6 @@ import {create, read,update, remove, getAll } from '../init'
 export default async (req, res, isHandler=true) => {
 
     let response = { status: "error" }
-    console.log("something is happening")
     try {
 
         switch (req.method) {
