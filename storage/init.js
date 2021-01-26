@@ -12,7 +12,6 @@ const create = async (data,col="theplug") => {
 }
 
 const read = async (id,col="theplug") => {
-
     return await faunaSDK.query(
         q.Get(
             q.Ref(
