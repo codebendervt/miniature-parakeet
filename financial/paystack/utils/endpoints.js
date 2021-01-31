@@ -3,5 +3,6 @@ export default {
     verify : "transaction/verify/",
     charge : "transaction/charge_authorization",
     product: "product",
-    bank : "bank"
+    bank : "bank",
+    account : "subaccount"
 }
