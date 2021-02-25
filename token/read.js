@@ -1,12 +1,13 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-var jwt = require('jsonwebtoken');
+
+import {ReadToken} from'./init'
 
 export default async (req, res) => {
 
 
     try {
         
-    var decoded = jwt.verify(req.body.token, 'shhhhh');
+    var decoded = ReadToken(req.body.token);
 
     res.json(decoded)
 
