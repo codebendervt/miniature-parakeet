@@ -1,6 +1,7 @@
 var jwt = require('jsonwebtoken');
-let key = process.env.HASH 
+let key = 'shhhhh'
 
+//process.env.HASH  it is safer to use a env to set key
 export const CreateToken = (data) => {
     let token =jwt.sign({issuer:"sauveur",exp: Math.floor(Date.now() / 1000) + (180 * 180),data:data}, `${key}`);
 
