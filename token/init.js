@@ -8,7 +8,7 @@ export const CreateToken = (data) => {
 }
 
 export const ReadToken = (body) =>{
-    console.log(body)
+   // console.log(body)
     return  jwt.verify(body.token,`${key}`);
 
 }
