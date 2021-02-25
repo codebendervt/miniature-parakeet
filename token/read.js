@@ -6,8 +6,9 @@ export default async (req, res) => {
 
 
     try {
+    
         
-    var decoded = ReadToken(req.body.token);
+    var decoded = ReadToken(req.body);
 
     res.json(decoded)
 
