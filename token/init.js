@@ -3,7 +3,7 @@ let key = 'shhhhh'
 
 //process.env.HASH  it is safer to use a env to set key
 export const CreateToken = (data) => {
-    let token =jwt.sign({issuer:"sauveur",exp: Math.floor(Date.now() / 1000) + (180 * 180),data:data}, `${key}`);
+    let token =jwt.sign({issuer:"sauveur",expiresIn: "30d",data:data}, `${key}`);
 
     return {token:token}
 }
