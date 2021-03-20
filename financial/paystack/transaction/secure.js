@@ -1,12 +1,14 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import paystackSDK from '../utils/init'
-import endpoints from '../utils/endpoints'
+import transaction from './init'
+import {ReadToken} from '../../../token/init'
 
 export default async (req, res) => {
 
     try{
-        let url = `${endpoints.verify + req.body.referance}`
-        const response = await paystackSDK('GET',url);
+        let data = req.body
+
+        let dec = ReadToken(data)
+        const response = await transaction(dec.data)
         // var data = await getData("http://api.sauveur.cloud/data/home","GET",true)
         // console.log(data);
        res.statusCode = 200

@@ -12,16 +12,16 @@ export default async (req, res, isHandler=true) => {
 
         switch (req.method) {
             case "POST":
-                response = await create(req.body,"genus")
+                response = await create(req.body,"guap")
                 break;
             case "GET":
-                response = await read(req.body.id,"genus")
+                response = await read(req.body.id,"guap")
                 break;
             case "PUT":
-                response = await update(req.body.data, req.body.id,"genus")
+                response = await update(req.body.data, req.body.id,"guap")
                 break;
             case "DELETE":
-                response = await remove(req.body.id,"genus")
+                response = await remove(req.body.id,"guap")
                 break;
             default:
                 response = await getAll()

@@ -10,8 +10,7 @@ export default async (req, res) => {
     let response = { status: "error" }
 
     try {
-        
-        response = await findById(req.body.id,"_brand");
+        response = await findById(req.body.id,"_brandName");
 
         res.json(response)
 

@@ -9,6 +9,8 @@ export default async (req, res) => {
 
     let response = { status: "error" }
 
+    let id = req.query.id;
+    
     try {
 
         switch (req.method) {
@@ -16,7 +18,7 @@ export default async (req, res) => {
                 response = await create(req.body)
                 break;
             case "GET":
-                response = await read(req.body.id)
+                response = await read(id)
                 break;
             case "PUT":
                 response = await update(req.body.data, req.body.id)

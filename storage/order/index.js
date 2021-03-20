@@ -8,20 +8,23 @@ import {create, read,update, remove, getAll } from '../init'
 export default async (req, res, isHandler=true) => {
 
     let response = { status: "error" }
+
+    
+    let id = req.query.id;
     try {
 
         switch (req.method) {
             case "POST":
-                response = await create(req.body,"genus")
+                response = await create(req.body,"sorsordo")
                 break;
             case "GET":
-                response = await read(req.body.id,"genus")
+                response = await read(id,"sorsordo")
                 break;
             case "PUT":
-                response = await update(req.body.data, req.body.id,"genus")
+                response = await update(req.body.data, req.body.id,"sorsordo")
                 break;
             case "DELETE":
-                response = await remove(req.body.id,"genus")
+                response = await remove(req.body.id,"sorsordo")
                 break;
             default:
                 response = await getAll()
